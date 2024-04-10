@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'name' => 'jurapro/pop-it-mvc',
+        'name' => 'annmm85/pop-it-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'd04826fd09d1d4a7bf2fbffed0bdf3df6306e87a',
+        'reference' => 'f9c7cd1074dbafda5dc3815240cb87a3a65aa82b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'annmm85/pop-it-mvc' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'f9c7cd1074dbafda5dc3815240cb87a3a65aa82b',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.12.1',
             'version' => '0.12.1.0',
@@ -87,7 +96,7 @@
         'illuminate/database' => array(
             'pretty_version' => '11.x-dev',
             'version' => '11.9999999.9999999.9999999-dev',
-            'reference' => '42520255c2cf75941a66f2f6b5a9fc90e05c9476',
+            'reference' => '4106d0650151169a059ea939c5a69efa6044bb6b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/database',
             'aliases' => array(),
@@ -123,18 +132,9 @@
         'illuminate/support' => array(
             'pretty_version' => '11.x-dev',
             'version' => '11.9999999.9999999.9999999-dev',
-            'reference' => '119ec9956a43e91946e35b5e4ab2b49a9a8f4853',
+            'reference' => '4290c3d00aa53e8eef5016568f1569b100bd64a0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/support',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'jurapro/pop-it-mvc' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'd04826fd09d1d4a7bf2fbffed0bdf3df6306e87a',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -146,6 +146,17 @@
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(
                 0 => '3.x-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'nikic/fast-route' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'd3ada013d0f683ad2a8d0614fc97917a6ab72ce9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nikic/fast-route',
+            'aliases' => array(
+                0 => '2.0.x-dev',
             ),
             'dev_requirement' => false,
         ),
@@ -201,7 +212,7 @@
         'symfony/clock' => array(
             'pretty_version' => '7.1.x-dev',
             'version' => '7.1.9999999.9999999-dev',
-            'reference' => '003cef80708fde6edde9f22a04849dedb7c469ac',
+            'reference' => '530e082716395152f79b5770499187dc72eddc3b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/clock',
             'aliases' => array(),
