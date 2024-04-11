@@ -9,4 +9,12 @@ class Students extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = [
+        'surname',
+        'name',
+        'patronymic',
+        'birthdate',
+        'adress',
+        'groop_id'
+    ];
 }

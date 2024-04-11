@@ -21,6 +21,7 @@
             ?>
             <a href="<?= app()->route->getUrl('/groops') ?>">Группы</a>
             <a href="<?= app()->route->getUrl('/disciplines') ?>">Дисциплины</a>
+            <a href="<?= app()->route->getUrl('/grades') ?>">Успеваемость</a>
             <a href="<?= app()->route->getUrl('/users') ?>">Сотрудники</a>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
         <?php

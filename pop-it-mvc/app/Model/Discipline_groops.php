@@ -9,4 +9,10 @@ class Discipline_groops extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = [
+        'groop_id',
+        'discipline_id',
+        'all_count_hour',
+        'type_control',
+    ];
 }

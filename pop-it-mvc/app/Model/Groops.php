@@ -9,4 +9,7 @@ class Groops extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = [
+        'name',
+    ];
 }

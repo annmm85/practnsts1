@@ -6,4 +6,4 @@
     }
     ?>
 </ol>
-<a href="<?= app()->route->getUrl('/create_students') ?>">Добавить студента</a>
+<div><a href="/pop-it-mvc/create_students">Добавить студента</a></div>

@@ -2,8 +2,8 @@
 <h3><?= $message ?? ''; ?></h3>
 <form method="post">
     <div>
-        <label for="gr-select">Выберите группу:</label>
-        <select name="groop_id" id="gr-select">
+        <label for="groop_id">Выберите группу:</label>
+        <select name="groop_id" id="groop_id">
             <option value="">-Выберите группу-</option>
             <?php
             foreach ($groops as $groop) {
@@ -13,12 +13,12 @@
         </select>
     </div>
     <div>
-        <label for="disc-select">Выберите дисциплину:</label>
-        <select name="discipline_id" id="disc-select">
+        <label for="discipline_id">Выберите дисциплину:</label>
+        <select name="discipline_id" id="discipline_id">
             <option value="">Выберите дисциплину</option>
             <?php
             foreach ($disciplines as $discipline) {
-                echo '<option value="'. $groop->id. '">' .$discipline->name. '</option>';
+                echo '<option value="'. $discipline->id. '">' .$discipline->name. '</option>';
             }
             ?>
         </select>
