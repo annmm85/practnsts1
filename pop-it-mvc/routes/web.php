@@ -15,6 +15,7 @@ Route::add(['GET', 'POST'], '/create_grades', [Controller\Site::class, 'create_g
 Route::add(['GET', 'POST'], '/login', [Controller\Site::class, 'login'])->middleware('noAuth');
 Route::add('GET', '/logout', [Controller\Site::class, 'logout'])->middleware('auth');
 Route::add('GET', '/mainik', [Controller\Site::class, 'mainik']);
+Route::add(['GET', 'POST'], '/signup', [Controller\Site::class, 'signup'])->middleware('auth','admin');
 
 
 
