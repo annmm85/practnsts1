@@ -2,6 +2,8 @@
 
 namespace Controller;
 
+use Src\Validator\Validator;
+
 use Model\Courses;
 use Model\Grades;
 use Src\View;
@@ -57,6 +59,31 @@ class Site
         $students = Students::all();
         return (new View())->render('site.grades', ['groops' => $groops, 'students' => $students,'disciplines' => $disciplines ]);
     }
+    public function signup(Request $request): string
+    {
+        $roles = Roles::all();
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'name' => ['required'],
+                'login' => ['required', 'unique:users,login'],
+                'password' => ['required']
+            ], [
+                'required' => 'Поле :field пусто',
+                'unique' => 'Поле :field должно быть уникально'
+            ]);
+
+            if($validator->fails()){
+                return new View('site.signup',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if (User::create($request->all())) {
+                app()->route->redirect('/users');
+            }
+        }
+        return new View('site.signup',['roles' => $roles]);
+    }
 
     public function disciplines(Request $request): string
     {
@@ -108,13 +135,7 @@ class Site
     {
         return new View('site.mainik');
     }
-    public function signup(Request $request): string
-    {   $roles = Roles::all();
-        if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/users');
-        }
-        return new View('site.signup',['roles' => $roles]);
-    }
+
 
     public function login(Request $request): string
     {
