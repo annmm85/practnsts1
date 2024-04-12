@@ -14,7 +14,7 @@ Route::add(['GET', 'POST'], '/create_groops', [Controller\Site::class, 'create_g
 Route::add(['GET', 'POST'], '/create_grades', [Controller\Site::class, 'create_grades'])->middleware('auth','sotrudnik');
 Route::add(['GET', 'POST'], '/login', [Controller\Site::class, 'login'])->middleware('noAuth');
 Route::add('GET', '/logout', [Controller\Site::class, 'logout'])->middleware('auth');
-
+Route::add('GET', '/mainik', [Controller\Site::class, 'mainik']);
 
 
 
