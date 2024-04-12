@@ -11,6 +11,7 @@ Route::add('GET', '/grades', [Controller\Site::class, 'grades'])->middleware('au
 Route::add(['GET', 'POST'], '/discipline_groops', [Controller\Site::class, 'discipline_groops'])->middleware('auth','sotrudnik');
 Route::add(['GET', 'POST'], '/create_students', [Controller\Site::class, 'create_students'])->middleware('auth','sotrudnik');
 Route::add(['GET', 'POST'], '/create_groops', [Controller\Site::class, 'create_groops'])->middleware('auth','sotrudnik');
+Route::add(['GET', 'POST'], '/create_grades', [Controller\Site::class, 'create_grades'])->middleware('auth','sotrudnik');
 
 
 
