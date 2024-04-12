@@ -30,18 +30,21 @@ class Site
             $idgr=$request->get('id');
             $students = Students::where('groop_id', $request->id)->get();
             $groops = Groops::where('id', $request->id)->get();
-            $gro=['groops' => $groops, 'students' => $students, 'idgr' => $idgr];
+            $studentik=null;
+            $gro=['groops' => $groops, 'students' => $students, 'idgr' => $idgr,'studentik' => $studentik];
             if ($request->get('student_id')){
                 $disciplines = Disciplines::all();
                 $studentik=$request->get('student_id');
+                $stud=Students::where('id', $request->get('student_id'))->get();
                 if ($request->method === 'POST' && Grades::create($request->all())) {
                     app()->route->redirect('/students');
                 }
-                $gro = ['groops' => $groops,'students' => $students, 'idgr' => $idgr,'studentik' => $studentik, 'disciplines' => $disciplines ];
+                $gro = ['groops' => $groops,'students' => $students, 'idgr' => $idgr,'studentik' => $studentik,'stud' =>$stud, 'disciplines' => $disciplines ];
             }
         }else{
             $groops = Groops::all();
-            $gro=['groops' => $groops];
+            $studentik=null;
+            $gro=['groops' => $groops,'studentik' => $studentik];
         }
 
         return (new View())->render('site.groops', ['gro' => $gro]);
@@ -50,27 +53,11 @@ class Site
     {
         $groops = Groops::all();
         $disciplines=Disciplines::all();
-
-        if ($request->get('discipline_id')&&$request->get('groop_id')){
-            $findgr = Discipline_groops::where(['groop_id' => $request->groop_id])->get();
-            $finddisc = Discipline_groops::where(['discipline_id' => $request->discipline_id])->get();
-            $grades=Grades::where(['discipline_groop_id' => $findgr->id])->get();
-            $grad=Grades::where(['discipline_groop_id' => $finddisc->id])->get();
-            $rew=array_merge($grades,$grad);
-            $gro=['rew' => $rew];
-        }else{
-             if ($request->get('groop_id')){
-                 $findgr = Discipline_groops::where(['groop_id' => $request->groop_id])->get();
-                 $grades=Grades::where(['discipline_groop_id' => array_keys($findgr)])->get();
-                 $gro=['grades' => $grades];
-             } else if ($request->get('discipline_id')) {
-                 $finddisc = Discipline_groops::where(['discipline_id' => $request->discipline_id])->get();
-                 $grad=Grades::where(['discipline_groop_id' => array_keys($finddisc)])->get();
-                 $gro=['grad' => $grad];
-             }
-        }
-        return (new View())->render('site.grades', ['gro' => $gro,'groops' => $groops,'disciplines' => $disciplines ]);
+        $grades=Grades::all();
+        $students = Students::all();
+        return (new View())->render('site.grades', ['groops' => $groops, 'students' => $students,'disciplines' => $disciplines ]);
     }
+
     public function disciplines(Request $request): string
     {
         if ($request->get('course_id')) {
@@ -80,7 +67,13 @@ class Site
             }
         return (new View())->render('site.disciplines', ['findDisciplines' => $findDisciplines]);
     }
-
+    public function create_disciplines(Request $request): string
+    {   $courses=Courses::all();
+        if ($request->method === 'POST' && Disciplines::create($request->all())) {
+            app()->route->redirect('/disciplines');
+        }
+        return new View('site.create_disciplines', ['courses' => $courses]);
+    }
     public function create_groops(Request $request): string
     {
         if ($request->method === 'POST' && Groops::create($request->all())) {
@@ -111,21 +104,16 @@ class Site
         }
         return new View('site.discipline_groops', ['groops' => $groops, 'disciplines' => $disciplines]);
     }
-
+    public function mainik(Request $request): string
+    {
+        return new View('site.mainik');
+    }
     public function signup(Request $request): string
     {   $roles = Roles::all();
         if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/login');
+            app()->route->redirect('/users');
         }
         return new View('site.signup',['roles' => $roles]);
-    }
-
-    public function roles(Request $request): string
-    {
-        if ($request->method === 'POST' && Roles::create($request->all())) {
-            app()->route->redirect('/login');
-        }
-        return new View('site.roles');
     }
 
     public function login(Request $request): string
@@ -136,7 +124,7 @@ class Site
         }
         //Если удалось аутентифицировать пользователя, то редирект
         if (Auth::attempt($request->all())) {
-            app()->route->redirect('/students');
+            app()->route->redirect('/mainik');
         }
         //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);

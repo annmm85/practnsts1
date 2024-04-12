@@ -57,5 +57,10 @@ class Auth
         Session::clear('id');
         return true;
     }
-
+    public static function checkRole(): bool
+    {
+        $userRole = self::user()::where('id', '=', $_SESSION['id'])->first()->roles_id;
+        if ($userRole === 4)return true;
+        else return false;
+    }
 }

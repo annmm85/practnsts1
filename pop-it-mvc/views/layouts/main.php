@@ -9,9 +9,9 @@
     <title>Pop it MVC</title>
 </head>
 <body>
-<header>
-    <nav>
-        <a href="<?= app()->route->getUrl('/students') ?>">Главная</a>
+<header class="header">
+    <nav class="headlink">
+        <a href="<?= app()->route->getUrl('/mainik') ?>">Главная</a>
         <?php
         if (!app()->auth::check()):
             ?>
@@ -19,18 +19,33 @@
         <?php
         else:
             ?>
-            <a href="<?= app()->route->getUrl('/groops') ?>">Группы</a>
-            <a href="<?= app()->route->getUrl('/disciplines') ?>">Дисциплины</a>
-            <a href="<?= app()->route->getUrl('/grades') ?>">Успеваемость</a>
-            <a href="<?= app()->route->getUrl('/users') ?>">Сотрудники</a>
+            <?php
+            if (app()->auth::checkRole()):
+                ?>
+                <a href="<?= app()->route->getUrl('/users') ?>">Сотрудники</a>
+            <?php
+            else :
+                ?>
+                <a href="<?= app()->route->getUrl('/users') ?>">Сотрудники</a>
+                <a href="<?= app()->route->getUrl('/groops') ?>">Группы</a>
+                <a href="<?= app()->route->getUrl('/disciplines') ?>">Дисциплины</a>
+                <a href="<?= app()->route->getUrl('/grades') ?>">Успеваемость</a>
+            <?php
+            endif;
+            ?>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
         <?php
         endif;
         ?>
     </nav>
 </header>
-<main>
-    <?= $content ?? '' ?>
+<main class="main">
+    <div class="main-logo">DeKa</div>
+    <div class="main-content">
+        <div class="main-block">
+            <?= $content ?? '' ?>
+        </div>
+    </div>
 </main>
 
 </body>
