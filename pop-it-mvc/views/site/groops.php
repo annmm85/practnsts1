@@ -28,6 +28,7 @@ if ($gro['studentik']){
     echo '</div>';
     echo '<div class="mini-block-gr-disc">';
     echo'<form method="post" class="mini-form">';
+    echo'<input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>';
     echo '<label class="hiddenn"><input  type="text" name="student_id" value="'. $gro['studentik'] .'"/></label>';
     echo '<label>Введите оценку<input type="text" name="mark"></label>';
     echo'<div>';

@@ -1,6 +1,7 @@
 <h1>Выставление оценки</h1>
 <h3><?= $message ?? ''; ?></h3>
 <form method="post" class="form">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <?php
     echo '<label><input type="text" name="student_id" value="'. $studentik .'"/></label>';
     ?>

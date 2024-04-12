@@ -1,6 +1,7 @@
 <a class="oneabutt" href="<?= app()->route->getUrl('/groops') ?>">Все группы</a>
 <h1>Прикрепление дисциплины</h1>
 <form method="post" class="form">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <div>
         <label for="groop_id">Выберите группу:</label>
         <select class="selectl" name="groop_id" id="groop_id">

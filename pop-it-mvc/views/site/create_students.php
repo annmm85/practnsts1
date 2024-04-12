@@ -1,5 +1,7 @@
 <h2>Добавление студента</h2>
+<h3><?= $message ?? ''; ?></h3>
 <form method="post" class="form">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <label>Фамилия <input type="text" name="surname"></label>
     <label>Имя <input type="text" name="name"></label>
     <label>Отчество <input type="text" name="patronymic"></label>

@@ -3,7 +3,7 @@
         'name' => 'annmm85/pop-it-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'f9c7cd1074dbafda5dc3815240cb87a3a65aa82b',
+        'reference' => '9d473346ad32580e75aac01331406a4eece391e5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'annmm85/pop-it-mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f9c7cd1074dbafda5dc3815240cb87a3a65aa82b',
+            'reference' => '9d473346ad32580e75aac01331406a4eece391e5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -96,7 +96,7 @@
         'illuminate/database' => array(
             'pretty_version' => '11.x-dev',
             'version' => '11.9999999.9999999.9999999-dev',
-            'reference' => '4106d0650151169a059ea939c5a69efa6044bb6b',
+            'reference' => '30a146bb05d155b0376e1c44f6afc0e73ff73f46',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/database',
             'aliases' => array(),

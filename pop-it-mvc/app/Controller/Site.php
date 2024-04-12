@@ -59,19 +59,59 @@ class Site
         $students = Students::all();
         return (new View())->render('site.grades', ['groops' => $groops, 'students' => $students,'disciplines' => $disciplines ]);
     }
+
+
+
+    public function create_groops(Request $request): string
+    {
+        if ($request->method === 'POST' && Groops::create($request->all())) {
+            app()->route->redirect('/groops');
+        }
+        return new View('site.create_groops');
+    }
+
+
+
+    public function create_students(Request $request): string
+    {
+        $groops = Groops::all();
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'birthdate' => ['dater']
+            ], [
+                'dater' => 'Дата в поле :field некорректна'
+            ]);
+
+
+            if($validator->fails()){
+                return new View('site.create_students',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if (Students::create($request->all())) {
+                app()->route->redirect('/students');
+            }
+        }
+        return new View('site.create_students',['groops' => $groops]);
+    }
+
     public function signup(Request $request): string
     {
         $roles = Roles::all();
         if ($request->method === 'POST') {
 
             $validator = new Validator($request->all(), [
-                'name' => ['required'],
+                'name' => ['required','language'],
                 'login' => ['required', 'unique:users,login'],
-                'password' => ['required']
+                'password' => ['required','number']
             ], [
                 'required' => 'Поле :field пусто',
-                'unique' => 'Поле :field должно быть уникально'
+                'unique' => 'Поле :field должно быть уникально',
+                'number' => 'Поле :field должен содержать буквы',
+                'language' => 'Поле :field должен содержать только кириллицу'
             ]);
+
 
             if($validator->fails()){
                 return new View('site.signup',
@@ -85,15 +125,6 @@ class Site
         return new View('site.signup',['roles' => $roles]);
     }
 
-    public function disciplines(Request $request): string
-    {
-        if ($request->get('course_id')) {
-                $findDisciplines = Disciplines::where(['course_id' => $request->course_id])->get();
-            }else{
-                $findDisciplines = Disciplines::all();
-            }
-        return (new View())->render('site.disciplines', ['findDisciplines' => $findDisciplines]);
-    }
     public function create_disciplines(Request $request): string
     {   $courses=Courses::all();
         if ($request->method === 'POST' && Disciplines::create($request->all())) {
@@ -101,21 +132,6 @@ class Site
         }
         return new View('site.create_disciplines', ['courses' => $courses]);
     }
-    public function create_groops(Request $request): string
-    {
-        if ($request->method === 'POST' && Groops::create($request->all())) {
-            app()->route->redirect('/groops');
-        }
-        return new View('site.create_groops');
-    }
-    public function create_students(Request $request): string
-    {   $groops = Groops::all();
-        if ($request->method === 'POST' && Students::create($request->all())) {
-            app()->route->redirect('/students');
-        }
-        return new View('site.create_students',['groops' => $groops]);
-    }
-
     public function users(Request $request): string
     {
         $users = Students::all();
@@ -157,4 +173,19 @@ class Site
         app()->route->redirect('/login');
     }
 
+    public function disciplines(Request $request): string
+    {
+        if ($request->get('course_id')) {
+                $findDisciplines = Disciplines::where(['course_id' => $request->course_id])->get();
+            }else{
+                $findDisciplines = Disciplines::all();
+            }
+        return (new View())->render('site.disciplines', ['findDisciplines' => $findDisciplines]);
+    }
+    public function search(Request $request): string
+    {
+        $s = $request->get('s');
+        $findDisciplines = Disciplines::where('name', 'like', "%{$s}%")->get();
+        return (new View())->render('site.disciplines', ['findDisciplines' => $findDisciplines]);
+    }
 }

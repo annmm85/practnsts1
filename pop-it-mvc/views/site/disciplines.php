@@ -3,6 +3,11 @@
     <a class="abutt" href="/pop-it-mvc/create_disciplines">Добавить дисциплину</a>
 </div>
 <h1 class="block-title">Дисциплины</h1>
+
+<form name="search" method="get" action="<?= app()->route->getUrl('/search') ?>"">
+    <input type="text" id="s" name="s" placeholder="Поиск">
+    <button type="submit">Найти</button>
+</form>
 <div  class="filtermainblock">
     <div class="filterblock">
         <h3 class="block-title"> Курсы</h3>
@@ -16,7 +21,7 @@
         ?>
     </div>
 
-<div class="filterblock">
+    <div class="filterblock">
 <h3 class="block-title">Семестры</h3>
 <ol class="olioli">
     <li class="filterelem">1</li>
