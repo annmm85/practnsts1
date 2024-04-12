@@ -8,7 +8,7 @@ Route::add(['GET', 'POST'], '/create_disciplines', [Controller\Site::class, 'cre
 Route::add('GET', '/groops', [Controller\Site::class, 'groops'])->middleware('auth','sotrudnik');
 Route::add('GET', '/disciplines', [Controller\Site::class, 'disciplines'])->middleware('auth','sotrudnik');
 Route::add('GET', '/grades', [Controller\Site::class, 'grades'])->middleware('auth','sotrudnik');
-
+Route::add(['GET', 'POST'], '/discipline_groops', [Controller\Site::class, 'discipline_groops'])->middleware('auth','sotrudnik');
 
 
 
