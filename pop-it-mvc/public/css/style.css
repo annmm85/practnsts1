@@ -1,0 +1,381 @@
+.header{
+    background-color: #193A6B ;
+    padding: 20px;
+}
+.header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+h1, h2, h3{
+    margin: 0;
+}
+.header nav a{
+    width: 140px;
+    color: white ;
+    border: 2px solid white ;
+    border-radius: 35px;
+    padding: 5px 0 5px 25px;
+}
+.header nav a:hover{
+    background-color: #003488;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-logo {
+    color: #193A6B;
+    font-size: 36px;
+    padding: 20px;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    background-color: #C8D8F0;
+    padding: 40px 0;
+    width: 100%;
+    align-items: center;
+}
+.main-block{
+    background-color: white;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    width: 820px;
+    gap: 20px;
+}
+.block-title{
+    color: #193A6B;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+    width: 60%;
+}
+label{
+    margin: 0;
+}
+input {
+    outline: none;
+    width: 90%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.butt-form{
+    border: 1px solid black;
+    color: white;
+    background-color: #7690B8;
+    border-radius: 25px;
+    padding: 10px;
+    width: 465px;
+    text-align: center;
+}
+.butt-form:hover{
+    background-color: #193A6B;
+}
+.butt-form:focus {
+    background-color: #b4c9f3;
+}
+.selectl{
+    appearance: none;
+    border-radius: 25px;
+    width: 465px;
+    padding: 10px;
+    cursor:pointer;
+}
+.oli{
+    display: flex;
+    width: 600px;
+    height: 100px;
+    align-content: stretch;
+    justify-content: space-between;
+    gap: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+li{
+    list-style-type: none;
+}
+.agroops{
+    border:1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+}
+.agroops:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.agroops:focus{
+    background-color: #b4c9f3;
+    color: black;
+}
+.topbutt{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.abutt{
+    min-width: 160px;
+    color: black;
+    border: 2px solid #193A6B;
+    border-radius: 35px;
+    padding: 10px 15px;
+    text-align: center;
+}
+.abutt:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.abutt:focus{
+    background-color: #b4c9f3;
+    color: black;
+}
+.onlyabutt{
+    min-width: 140px;
+    color: black ;
+    border: 2px solid #193A6B;
+    border-radius: 35px;
+    padding: 10px 15px;
+    margin-right: 80%;
+}
+.onlyabutt:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.onlyabutt:focus{
+    background-color: #b4c9f3;
+    color: black;
+}
+.abuttbuttom{
+    background-color: #7690B8;
+    border-radius: 25px;
+    padding: 10px;
+    min-width: 465px;
+    color: white;
+    text-align: center;
+}
+.abuttbuttom:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.oneabutt{
+    min-width: 160px;
+    color: black;
+    border: 2px solid #193A6B;
+    border-radius: 35px;
+    padding: 10px 15px;
+    margin-right: auto;
+    text-align: center;
+}
+.oneabutt:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.oneabutt:focus{
+    background-color: #b4c9f3;
+    color: black;
+}
+.rightabutt{
+    min-width: 160px;
+    color: black;
+    border: 2px solid #193A6B;
+    border-radius: 35px;
+    padding: 10px 15px;
+    margin-left: 62%;
+    text-align: center;
+}
+.rightabutt:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.rightabutt:focus{
+    background-color: #b4c9f3;
+    color: black;
+}
+.spis{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+.elemspis{
+    display: flex;
+    gap: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.discgroop-block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.discgroop-block input{
+    display: flex;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.hiddenn{
+    display: none;
+}
+
+.mini-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+}
+.mini-selectl {
+    appearance: none;
+    border-radius: 25px;
+    width: 195px;
+    padding: 10px;
+    cursor: pointer;
+}
+.mini-butt-form{
+    border: 1px solid black;
+    color: black;
+    background-color: #63d589;
+    border-radius: 25px;
+    padding: 10px;
+    width: 195px;
+    text-align: center;
+}
+.mini-block-gr-disc{
+    width: 25%;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 100%;
+    padding: 15px;
+    background-color: #bdefa6;
+}
+.mini-block-stud{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.abuttgreen{
+    min-width: 140px;
+    color: #BDEFA6;
+    border: 1px solid black;
+    border-radius: 35px;
+    padding: 10px 15px;
+}
+.mini-butt-form:hover{
+    background-color: #5fa86f;
+    color:white;
+}
+.mini-butt-form:visited{
+    background-color: #e7ffdc;
+    color:black;
+}
+.mini-butt-create-gr{
+    border: 1px solid black;
+    color: white;
+    background-color: #7690B8;
+    border-radius: 25px;
+    padding: 10px 130px;
+    text-align: center;
+}
+.olioli{
+    display: flex;
+    align-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    justify-content: space-evenly;
+}
+.filterblock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    gap: 20px;
+    padding: 10px;
+    background-color: #b0cefa;
+    justify-content: space-evenly;
+}
+.filtermainblock{
+    display: flex;
+    gap: 30px;
+}
+.filterelem{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.filterelem:hover{
+    background-color: #193A6B;
+    color:white;
+}
+.filterelem:focus{
+    background-color: #b4c9f3;
+    color: black;
+}
+.findspis{
+    display: flex;
+    text-align: center;
+    gap: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px 30px;
+    flex-direction: column;
+    background-color: #7690B8;
+    min-width: 630px;
+    align-items: center;
+}
+.findelemspis{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 60px;
+    min-width: 400px;
+    background-color: white;
+}
+.sotrspis{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+    min-width: 700px;
+}
+.sotrelemspis{
+    display: flex;
+    gap: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.sotrinfo{
+    padding: 10px 25px;
+    color: black;
+}
