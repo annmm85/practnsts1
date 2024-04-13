@@ -28,7 +28,23 @@ class Site
         return (new View())->render('site.students', ['students' => $students]);
     }
 
-
+    public function create_bests(Request $request): string
+    {
+        if ($request->method === 'POST') {
+            if ($_FILES) {
+                if (move_uploaded_file($_FILES['image']['tmp_name'],
+                    'uploads/' . $_FILES['image']['name'])) {
+                    echo 'Файл успешно загружен';
+                } else {
+                    echo 'Ошибка загрузки файла';
+                }
+            }
+            if (Bests::create( ['name'=>$request->name, 'image' => 'uploads/' . $_FILES['image']['name']])) {
+                app()->route->redirect('/mainik');
+            }
+        }
+        return new View('site.create_bests');
+    }
 
     public function create_groops(Request $request): string
     {
