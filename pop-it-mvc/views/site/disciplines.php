@@ -4,35 +4,41 @@
 </div>
 <h1 class="block-title">Дисциплины</h1>
 
-<form name="search" method="get" action="<?= app()->route->getUrl('/search') ?>"">
-    <input type="text" id="s" name="s" placeholder="Поиск">
-    <button type="submit">Найти</button>
-</form>
+
 <div  class="filtermainblock">
     <div class="filterblock">
         <h3 class="block-title"> Курсы</h3>
         <?php
 
         echo '<ol  class="olioli">';
-        foreach ($findDisciplines as $dis) {
-            echo '<li>' . '<a  class="filterelem"  href="/pop-it-mvc/disciplines?course_id=' . $dis->course_id. '">' . $dis->course_id. '</a>' . '</li>';
+        foreach ($courses as $course) {
+            echo '<li>' . '<a  class="filterelem"  href="/pop-it-mvc/disciplines?course_id=' . $course->id. '">' . $course->id. '</a>' . '</li>';
         }
         echo '</ol>';
         ?>
     </div>
-
-    <div class="filterblock">
+<div class="filterblock">
 <h3 class="block-title">Семестры</h3>
-<ol class="olioli">
-    <li class="filterelem">1</li>
-    <li class="filterelem">2</li>
+
+    <?php
+
+    echo '<ol  class="olioli">';
+    foreach ($semesters as $semester) {
+        if($ll['ff']){
+            echo '<li>' . '<a  class="filterelem"  href="/pop-it-mvc/disciplines?course_id='.$ll['ff'].'&semester_id=' . $semester->id. '">' . $semester->id. '</a>' . '</li>';
+        }else{
+            echo '<li>' . '<a  class="filterelem"  href="/pop-it-mvc/disciplines?semester_id=' . $semester->id. '">' . $semester->id. '</a>' . '</li>';
+        }
+    }
+    echo '</ol>';
+    ?>
 </ol></div>
-    </div>
+</div>
 
 <?php
-if ($findDisciplines) {
+if ($ll['findDisciplines']) {
     echo '<div class="findspis">';
-    foreach ($findDisciplines as $dis) {
+    foreach ($ll['findDisciplines'] as $dis) {
         echo '<div  class="findelemspis">';
         echo '<li>' . $dis->name . '</li>';
         echo '</div>';

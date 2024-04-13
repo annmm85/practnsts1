@@ -379,3 +379,29 @@ li{
     padding: 10px 25px;
     color: black;
 }
+.news{
+    display: flex;
+    gap: 30px;
+    background-color: #a1b9dc;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+}
+.newsbl{
+    background-color: #ffffff94;
+    padding: 30px 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.searbt{
+    background-color: #193a6b;
+    color: white;
+    border: 1px solid #193a6b;
+    border-radius: 20px;
+    padding: 10px;
+}
