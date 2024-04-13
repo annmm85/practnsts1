@@ -4,6 +4,10 @@
 </div>
 <h1 class="block-title">Дисциплины</h1>
 
+<form style="display: flex" name="search" method="get" action="<?= app()->route->getUrl('/search') ?>"">
+<input type="text" id="s" name="s" placeholder="Поиск">
+<button class="searbt" type="submit">Найти</button>
+</form>
 
 <div  class="filtermainblock">
     <div class="filterblock">

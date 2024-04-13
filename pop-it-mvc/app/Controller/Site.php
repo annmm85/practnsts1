@@ -45,7 +45,34 @@ class Site
         }
         return new View('site.create_bests');
     }
+    public function disciplines(Request $request): string
+    {
+        $courses = Courses::all();
+        $semesters = Semesters::all();
 
+        if ($request->get('course_id')) {
+            $ff=$request->get('course_id');
+            $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id')])->get();
+            $ll=['ff' => $ff,'findDisciplines' => $findDisciplines] ;
+            if ($request->get('semester_id')) {
+                $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id'), 'semester_id' => $request->semester_id])->get();
+                $ll=['findDisciplines' => $findDisciplines] ;
+            }
+        } else {
+            $findDisciplines = Disciplines::all();
+            $ll=['findDisciplines' => $findDisciplines] ;
+        }
+
+        return (new View())->render('site.disciplines', ['ll' => $ll, 'courses' => $courses, 'semesters' => $semesters]);
+    }
+
+
+    public function search(Request $request): string
+    {
+        $s = $request->get('s');
+        $findDisciplines = Disciplines::where('name', 'like', "%{$s}%")->get();
+        return (new View())->render('site.disciplines', ['findDisciplines' => $findDisciplines]);
+    }
     public function create_groops(Request $request): string
     {
         if ($request->method === 'POST' && Groops::create($request->all())) {
