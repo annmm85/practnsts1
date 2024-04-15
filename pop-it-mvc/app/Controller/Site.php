@@ -180,7 +180,18 @@ class Site
         $bests = Bests::all();
         return (new View())->render('site.mainik', ['bests' => $bests]);
     }
-
+    public function create_bests(Request $request): string
+    {
+        if ($request->method === 'POST') {
+            if ($_FILES) {
+                move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $_FILES['image']['name']);
+            }
+            if (Bests::create( ['name'=>$request->name, 'image' => 'uploads/' . $_FILES['image']['name']])) {
+                app()->route->redirect('/mainik');
+            }
+        }
+        return new View('site.create_bests');
+    }
 public function disciplines(Request $request): string
 {   $req = null;
     $reqqa= null;
