@@ -136,6 +136,31 @@ class Site
         app()->route->redirect('/login');
     }
 
+    public function groops(Request $request): string
+    {
+        if ($request->get('id')) {
+            $idgr = $request->get('id');
+            $students = Students::where('groop_id', $request->id)->get();
+            $groops = Groops::where('id', $request->id)->get();
+            $studentik = null;
+            $gro = ['groops' => $groops, 'students' => $students, 'idgr' => $idgr, 'studentik' => $studentik];
+            if ($request->get('student_id')) {
+                $disciplines = Discipline_groops::where('groop_id', $request->id)->get();
+                $discip= Disciplines::all();
+                $studentik = $request->get('student_id');
+                $stud = Students::where('id', $request->get('student_id'))->get();
+                $gro = ['disciplines' => $disciplines,'discip' => $discip,'groops' => $groops, 'students' => $students, 'idgr' => $idgr, 'studentik' => $studentik, 'stud' => $stud];
+            }
+        } else {
+            $groops = Groops::all();
+            $studentik = null;
+            $gro = ['groops' => $groops, 'studentik' => $studentik];
+        }
+        if ($request->method === 'POST' && Grades::create($request->all())) {
+            app()->route->redirect('/grades/');
+        }
+        return (new View())->render('site.groops', ['gro' => $gro]);
+    }
 
     public function grades(Request $request): string
     {
