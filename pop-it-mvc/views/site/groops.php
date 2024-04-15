@@ -1,6 +1,7 @@
 <div class="topbutt" ><a class="abutt" href="<?= app()->route->getUrl('/groops') ?>">Все группы</a>
     <a class="abutt" href="<?= app()->route->getUrl('/discipline_groops') ?>">Прикрепить дисциплину</a>
 </div>
+<h3><?= $message ?? ''; ?></h3>
 <?php
 if ($gro['studentik']){
     foreach ($gro['groops'] as $groop) {
@@ -17,7 +18,7 @@ if ($gro['studentik']){
             if ($student->id!=$gro['studentik']){
                 echo '<div><a class="abutt" href="/pop-it-mvc/groops?id='.  $gro['idgr'] . '&student_id='.$student->id.'">Выставить оценку</a></div>';
             }else{
-                 echo '<div><a class="abuttgreen" style="background-color: #BDEFA6;">Выставить оценку</a></div>';
+                echo '<div><a class="abuttgreen" style="background-color: #BDEFA6;">Выставить оценку</a></div>';
             }
             echo '</div>';
         }
@@ -34,7 +35,14 @@ if ($gro['studentik']){
     <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <?php
     echo '<label class="hiddenn"><input  type="text" name="student_id" value="'. $gro['studentik'] .'"/></label>';
-    echo '<label>Введите оценку<input type="text" name="mark"></label>';
+    echo'<div>';
+    echo  ' <label for="mark">Оценка:</label>';
+    echo '<select class="mini-selectl" name="mark" id="mark">';
+    foreach ($gro['marks'] as $mark) {
+        echo '<option value="'. $mark->id. '">' .$mark->mark. '</option>';
+    }
+    echo '</select>';
+    echo'</div>';
     echo'<div>';
     echo  ' <label for="discipline_groop_id">Дисциплина группы:</label>';
     echo '<select class="mini-selectl" name="discipline_groop_id" id="discipline_groop_id">';
@@ -66,6 +74,18 @@ if (count($gro['groops'])==1 && $gro['studentik']==null){
             echo '<li>'. $student->surname ." " . $student->name ." " . $student->patronymic .'</li>';
             echo '<div><a class="abutt" href="/pop-it-mvc/groops?id='. $gro['idgr'] . '&student_id='.$student->id.'">Выставить оценку</a></div>';
             echo '</div>';
+        }
+        echo '</div>';
+        echo '<h2 class="block-title">Дисциплины</h2>';
+        echo '<div class="spis">';
+        foreach ($gro['discipliness'] as $discipline) {
+            foreach ($gro['disciplines'] as $discip) {
+                if ($discipline->discipline_id==$discip->id){
+                    echo '<div  class="elemspis">';
+                    echo '<li>' .$discip->name. '</li>';
+                    echo '</div>';
+                }
+            }
         }
         echo '</div>';
         echo '<div>';

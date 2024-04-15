@@ -14,6 +14,7 @@ return [
     'validators' => [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
+        'uniq' => \Validators\UniqValidator::class,
         'number' => validators\NumberValidator::class,
         'language' => validators\LanguageValidator::class,
         'dater' => validators\DaterValidator::class,
@@ -21,6 +22,6 @@ return [
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,
         'trim' => \Middlewares\TrimMiddleware::class,
-        'specialChars' => \Middlewares\SpecialCharsMiddleware::class,
+        //'specialChars' => \Middlewares\SpecialCharsMiddleware::class,
     ],
 ];

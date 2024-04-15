@@ -1,4 +1,5 @@
 <a class="oneabutt" href="<?= app()->route->getUrl('/groops') ?>">Все группы</a>
+<h3><?= $message ?? ''; ?></h3>
 <h1>Прикрепление дисциплины</h1>
 <form method="post" class="form">
     <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
@@ -16,9 +17,9 @@
         <label for="discipline_id">Выберите дисциплину:</label>
         <select class="selectl" name="discipline_id" id="discipline_id">
             <?php
-            foreach ($disciplines as $discipline) {
-                echo '<option value="'. $discipline->id. '">' .$discipline->name. '</option>';
-            }
+                foreach ($disciplines as $discipline) {
+                            echo '<option value="' . $discipline->id . '">' . $discipline->name . '</option>';
+                }
             ?>
         </select>
     </div>
