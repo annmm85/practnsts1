@@ -83,5 +83,3 @@ if(count($gro['groops'])>1){
     echo '</ol>';
     echo ' <a class="butt-form" href="/pop-it-mvc/create_groops">Добавить группу</a>';
 }
-?>
-

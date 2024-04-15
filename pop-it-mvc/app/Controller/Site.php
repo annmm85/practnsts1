@@ -181,5 +181,44 @@ class Site
         return (new View())->render('site.mainik', ['bests' => $bests]);
     }
 
+public function disciplines(Request $request): string
+{   $req = null;
+    $reqqa= null;
+    $reqqas= null;
+    $poisk=null;
+    $courses = Courses::all();
+    $semesters = Semesters::all();
+    $findDisciplines= Disciplines::all();
+    $ll=['findDisciplines' => $findDisciplines,'reqqa' => $reqqa];
+    if ($request->get('s')){
+        $s = $request->get('s');
+        $findDisciplines= Disciplines::where('name', 'like', "%{$s}%")->get();
+        $ll=['findDisciplines' => $findDisciplines, 's' => $s];
+    }
+    if ($request->get('course_id')) {
+        $req= $request->get('course_id');
+        $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id')])->get();
+        $ll=['findDisciplines' => $findDisciplines,'req' => $req] ;
+        if ($request->get('semester_id')) {
+            $reqqas= $request->get('semester_id');
+            $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id'), 'semester_id' => $request->get('semester_id')])->get();
+            $ll=['findDisciplines' => $findDisciplines,'reqqas' => $reqqas];
+        }
+    }
+    if ($request->get('semester_id')) {
+        $req= $request->get('semester_id');
+        $findDisciplines = Disciplines::where(['semester_id' => $request->semester_id])->get();
+        $ll = ['findDisciplines' => $findDisciplines,'req' => $req];
+        if ($request->get('course_id')) {
+            $reqqa= $request->get('course_id');
+            $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id'), 'semester_id' => $request->get('semester_id')])->get();
+            $ll=['findDisciplines' => $findDisciplines,'reqqa' => $reqqa];
+        }
+    }
+    return (new View())->render('site.disciplines', ['ll' => $ll, 'courses' => $courses, 'semesters' => $semesters, 'poisk' => $poisk,'req' => $req,'reqqa' => $reqqa,'reqqas' => $reqqas]);
+}}
+?>
+
+
 
 }
