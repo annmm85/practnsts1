@@ -92,6 +92,11 @@ class Site
 
     public function create_disciplines(Request $request): string
     {
+        $validator = new Validator($request->all(), [
+            'discipline_id' => ['unique:discipline_groops,discipline_id']
+        ], [
+            'unique' => 'Поле :field должно быть уникально'
+        ]);
         $courses = Courses::all();
         $semesters = Semesters::all();
         if ($request->method === 'POST' && Disciplines::create($request->all())) {
@@ -157,7 +162,7 @@ class Site
             $gro = ['groops' => $groops, 'studentik' => $studentik];
         }
         if ($request->method === 'POST' && Grades::create($request->all())) {
-            app()->route->redirect('/grades/');
+            app()->route->redirect('/grades');
         }
         return (new View())->render('site.groops', ['gro' => $gro]);
     }
@@ -227,9 +232,6 @@ public function disciplines(Request $request): string
         }
     }
     return (new View())->render('site.disciplines', ['ll' => $ll, 'courses' => $courses, 'semesters' => $semesters, 'poisk' => $poisk,'req' => $req,'reqqa' => $reqqa,'reqqas' => $reqqas]);
-}}
-?>
-
-
-
 }
+}
+

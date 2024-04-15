@@ -1,9 +1,8 @@
 <?php
 
 
-namespace Src\Validator;
+namespace Validators;
 
-use Illuminate\Database\Capsule\Manager as Capsule;
 use Src\Validator\AbstractValidator;
 
 class DaterValidator extends AbstractValidator

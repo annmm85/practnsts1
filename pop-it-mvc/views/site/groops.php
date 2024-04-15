@@ -41,7 +41,7 @@ if ($gro['studentik']){
     foreach ($gro['disciplines'] as $discipline) {
         foreach ($gro['discip'] as $disci) {
             if ($discipline->discipline_id==$disci->id){
-                echo '<option value="'. $disci->id. '">' .$disci->name. '</option>';
+                echo '<option value="'. $discipline->id. '">' .$disci->name. '</option>';
             }
         }
     }
