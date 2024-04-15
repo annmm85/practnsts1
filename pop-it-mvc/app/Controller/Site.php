@@ -28,51 +28,7 @@ class Site
         return (new View())->render('site.students', ['students' => $students]);
     }
 
-    public function create_bests(Request $request): string
-    {
-        if ($request->method === 'POST') {
-            if ($_FILES) {
-                if (move_uploaded_file($_FILES['image']['tmp_name'],
-                    'uploads/' . $_FILES['image']['name'])) {
-                    echo 'Файл успешно загружен';
-                } else {
-                    echo 'Ошибка загрузки файла';
-                }
-            }
-            if (Bests::create( ['name'=>$request->name, 'image' => 'uploads/' . $_FILES['image']['name']])) {
-                app()->route->redirect('/mainik');
-            }
-        }
-        return new View('site.create_bests');
-    }
-    public function disciplines(Request $request): string
-    {
-        $courses = Courses::all();
-        $semesters = Semesters::all();
 
-        if ($request->get('course_id')) {
-            $ff=$request->get('course_id');
-            $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id')])->get();
-            $ll=['ff' => $ff,'findDisciplines' => $findDisciplines] ;
-            if ($request->get('semester_id')) {
-                $findDisciplines = Disciplines::where(['course_id' => $request->get('course_id'), 'semester_id' => $request->semester_id])->get();
-                $ll=['findDisciplines' => $findDisciplines] ;
-            }
-        } else {
-            $findDisciplines = Disciplines::all();
-            $ll=['findDisciplines' => $findDisciplines] ;
-        }
-
-        return (new View())->render('site.disciplines', ['ll' => $ll, 'courses' => $courses, 'semesters' => $semesters]);
-    }
-
-
-    public function search(Request $request): string
-    {
-        $s = $request->get('s');
-        $findDisciplines = Disciplines::where('name', 'like', "%{$s}%")->get();
-        return (new View())->render('site.disciplines', ['findDisciplines' => $findDisciplines]);
-    }
     public function create_groops(Request $request): string
     {
         if ($request->method === 'POST' && Groops::create($request->all())) {
@@ -99,7 +55,7 @@ class Site
             }
 
             if (Students::create($request->all())) {
-                app()->route->redirect('/students');
+                app()->route->redirect('/groops?id='.$request->get('groop_id').'/');
             }
         }
         return new View('site.create_students', ['groops' => $groops]);
@@ -137,10 +93,11 @@ class Site
     public function create_disciplines(Request $request): string
     {
         $courses = Courses::all();
+        $semesters = Semesters::all();
         if ($request->method === 'POST' && Disciplines::create($request->all())) {
             app()->route->redirect('/disciplines');
         }
-        return new View('site.create_disciplines', ['courses' => $courses]);
+        return new View('site.create_disciplines', ['courses' => $courses, 'semesters' => $semesters ]);
     }
 
     public function users(Request $request): string
@@ -179,49 +136,18 @@ class Site
         app()->route->redirect('/login');
     }
 
-    public function groops(Request $request): string
-    {
-        if ($request->get('id')) {
-            $idgr = $request->get('id');
-            $students = Students::where('groop_id', $request->id)->get();
-            $groops = Groops::where('id', $request->id)->get();
-            $studentik = null;
-            $gro = ['groops' => $groops, 'students' => $students, 'idgr' => $idgr, 'studentik' => $studentik];
-            if ($request->get('student_id')) {
-                $disciplines = Disciplines::all();
-                $studentik = $request->get('student_id');
-                $stud = Students::where('id', $request->get('student_id'))->get();
-                if ($request->method === 'POST' && Grades::create($request->all())) {
-                    app()->route->redirect('/students');
-                }
-                $gro = ['groops' => $groops, 'students' => $students, 'idgr' => $idgr, 'studentik' => $studentik, 'stud' => $stud, 'disciplines' => $disciplines];
-            }
-        } else {
-            $groops = Groops::all();
-            $studentik = null;
-            $gro = ['groops' => $groops, 'studentik' => $studentik];
-        }
 
-        return (new View())->render('site.groops', ['gro' => $gro]);
-    }
     public function grades(Request $request): string
     {
+        $grades = Grades::all();
         $disciplines = Disciplines::all();
+        $dgr = Discipline_groops::all();
         $groops = Groops::all();
-
-        if ($request->get('discipline_groop_id')) {
-            $ff=$request->get('discipline_groop_id');
-            $findGrades = Grades::where(['discipline_groop_id' => $request->get('discipline_groop_id')])->get();
-            $ll=['ff' => $ff,'findGrades' => $findGrades] ;
-            if ($request->get('groop_id')) {
-                $findGrades = Grades::where(['discipline_groop_id' => $request->get('discipline_groop_id'), 'groop_id' => $request->groop_id])->get();
-                $ll=['findGrades' => $findGrades] ;
-            }
-        }else {
-            $findGrades = Grades::all();
-            $ll=['findGrades' => $findGrades] ;
-        }
-        return (new View())->render('site.grades', ['ll' => $ll, 'groops' => $groops, 'disciplines' => $disciplines]);
+        $students = Students::all();
+        $finreq = $request->get('discipline_id');
+        $finreqgr = $request->get('groop_id');
+        
+        return (new View())->render('site.grades', ['finreq' => $finreq,'finreqgr' => $finreqgr,'groops' => $groops, 'disciplines' => $disciplines,'grades' => $grades,'dgr' => $dgr,'students' => $students]);
     }
 
     public function mainik(Request $request): string

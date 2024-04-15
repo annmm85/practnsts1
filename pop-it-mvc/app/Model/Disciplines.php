@@ -11,5 +11,7 @@ class Disciplines extends Model
     public $timestamps = false;
     protected $fillable = [
         'name',
+        'course_id',
+        'semester_id'
     ];
 }

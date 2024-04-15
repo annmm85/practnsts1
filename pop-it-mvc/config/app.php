@@ -14,9 +14,9 @@ return [
     'validators' => [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
-        'number' => \Validators\NumberValidator::class,
-        'language' => \Validators\LanguageValidator::class,
-        'dater' => \Validators\DaterValidator::class,
+        'number' => validators\NumberValidator::class,
+        'language' => validators\LanguageValidator::class,
+        'dater' => validators\DaterValidator::class,
     ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,
