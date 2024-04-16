@@ -3,7 +3,7 @@
         'name' => 'annmm85/pop-it-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'f6dbc213c19f73a0f4a8851d59ff9f28fcfdafc6',
+        'reference' => 'b286832294fcff6cf713dc82d7a8e85c883bdd25',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -24,7 +24,7 @@
         'annmm85/pop-it-mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f6dbc213c19f73a0f4a8851d59ff9f28fcfdafc6',
+            'reference' => 'b286832294fcff6cf713dc82d7a8e85c883bdd25',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -33,7 +33,7 @@
         'annmm85/uplod' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '196e91173fb9ed8816387f14ac87644bedac86b7',
+            'reference' => 'cdf4a1cf73eeb06cbeda26a403c9e8152bcbb056',
             'type' => 'library',
             'install_path' => __DIR__ . '/../annmm85/uplod',
             'aliases' => array(

@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/annmm85/uplodpack.git",
-                "reference": "196e91173fb9ed8816387f14ac87644bedac86b7"
+                "reference": "cdf4a1cf73eeb06cbeda26a403c9e8152bcbb056"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/annmm85/uplodpack/zipball/196e91173fb9ed8816387f14ac87644bedac86b7",
-                "reference": "196e91173fb9ed8816387f14ac87644bedac86b7",
+                "url": "https://api.github.com/repos/annmm85/uplodpack/zipball/cdf4a1cf73eeb06cbeda26a403c9e8152bcbb056",
+                "reference": "cdf4a1cf73eeb06cbeda26a403c9e8152bcbb056",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "issues": "https://github.com/annmm85/uplodpack/issues",
                 "source": "https://github.com/annmm85/uplodpack/tree/main"
             },
-            "time": "2024-04-16T10:35:36+00:00"
+            "time": "2024-04-16T11:18:16+00:00"
         },
         {
             "name": "brick/math",
