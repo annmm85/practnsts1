@@ -218,11 +218,11 @@ class Site
     {
         if ($request->method === 'POST') {
             if ($_FILES) {
-                uplodition('uploads/')->move_upl_file('uploads/');
-//              move_uploaded_file($_FILES['image']['tmp_name'], $direct_name . $uniqfile);
+                $uniqfile = uniqid(). $_FILES['image']['name'];
+                uplodition('uploads/', $_FILES, $uniqfile)->move_upl_file('uploads/', $_FILES, $uniqfile);
             }
 
-            if (Bests::create( ['name'=>$request->name, 'image' => 'uploads/' . $_FILES['image']['name']])) {
+            if (Bests::create( ['name'=>$request->name, 'image' => 'uploads/' . $uniqfile])) {
                 app()->route->redirect('/mainik');
             }
         }
