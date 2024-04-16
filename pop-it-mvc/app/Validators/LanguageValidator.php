@@ -1,6 +1,6 @@
 <?php
 
-namespace Validators;
+namespace Validatecollect\Validators;
 
 use Src\Validator\AbstractValidator;
 

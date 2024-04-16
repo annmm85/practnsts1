@@ -4,8 +4,96 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "613313e034c522d0751558fcaa493fda",
+    "content-hash": "dfe214e77c13538edc64027729cbbef7",
     "packages": [
+        {
+            "name": "annmm85/collect",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/annmm85/collect.git",
+                "reference": "a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/annmm85/collect/zipball/a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa",
+                "reference": "a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Collect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "annmm85",
+                    "email": "8mona854@gmail.com"
+                }
+            ],
+            "description": "Module for working with arrays",
+            "support": {
+                "issues": "https://github.com/annmm85/collect/issues",
+                "source": "https://github.com/annmm85/collect/tree/main"
+            },
+            "time": "2024-04-16T03:13:43+00:00"
+        },
+        {
+            "name": "annmm85/uplod",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/annmm85/uplodpack.git",
+                "reference": "196e91173fb9ed8816387f14ac87644bedac86b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/annmm85/uplodpack/zipball/196e91173fb9ed8816387f14ac87644bedac86b7",
+                "reference": "196e91173fb9ed8816387f14ac87644bedac86b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Uplod\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "annmm85",
+                    "email": "8mona854@gmail.com"
+                }
+            ],
+            "description": "For uploads files",
+            "support": {
+                "issues": "https://github.com/annmm85/uplodpack/issues",
+                "source": "https://github.com/annmm85/uplodpack/tree/main"
+            },
+            "time": "2024-04-16T10:35:36+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
@@ -1664,12 +1752,14 @@
     "stability-flags": {
         "illuminate/database": 20,
         "illuminate/events": 20,
-        "nikic/fast-route": 20
+        "nikic/fast-route": 20,
+        "annmm85/collect": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4 | ^8.0"
+        "php": "^7.4 | ^8.0",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"

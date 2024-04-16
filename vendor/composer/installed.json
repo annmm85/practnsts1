@@ -1,6 +1,100 @@
 {
     "packages": [
         {
+            "name": "annmm85/collect",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/annmm85/collect.git",
+                "reference": "a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/annmm85/collect/zipball/a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa",
+                "reference": "a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0"
+            },
+            "time": "2024-04-16T03:13:43+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Collect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "annmm85",
+                    "email": "8mona854@gmail.com"
+                }
+            ],
+            "description": "Module for working with arrays",
+            "support": {
+                "issues": "https://github.com/annmm85/collect/issues",
+                "source": "https://github.com/annmm85/collect/tree/main"
+            },
+            "install-path": "../annmm85/collect"
+        },
+        {
+            "name": "annmm85/uplod",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/annmm85/uplodpack.git",
+                "reference": "196e91173fb9ed8816387f14ac87644bedac86b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/annmm85/uplodpack/zipball/196e91173fb9ed8816387f14ac87644bedac86b7",
+                "reference": "196e91173fb9ed8816387f14ac87644bedac86b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0"
+            },
+            "time": "2024-04-16T10:35:36+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Uplod\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "annmm85",
+                    "email": "8mona854@gmail.com"
+                }
+            ],
+            "description": "For uploads files",
+            "support": {
+                "issues": "https://github.com/annmm85/uplodpack/issues",
+                "source": "https://github.com/annmm85/uplodpack/tree/main"
+            },
+            "install-path": "../annmm85/uplod"
+        },
+        {
             "name": "brick/math",
             "version": "0.12.1",
             "version_normalized": "0.12.1.0",
@@ -293,12 +387,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "aee944e8220588756e21aa4c30eebd5f6481e453"
+                "reference": "19c6554c7eba0efabc3f8aa4c434815b7f6b4b7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/aee944e8220588756e21aa4c30eebd5f6481e453",
-                "reference": "aee944e8220588756e21aa4c30eebd5f6481e453",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/19c6554c7eba0efabc3f8aa4c434815b7f6b4b7d",
+                "reference": "19c6554c7eba0efabc3f8aa4c434815b7f6b4b7d",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +404,7 @@
             "suggest": {
                 "symfony/var-dumper": "Required to use the dump method (^7.0)."
             },
-            "time": "2024-04-04T17:36:49+00:00",
+            "time": "2024-04-15T15:26:05+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -734,12 +828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "4290c3d00aa53e8eef5016568f1569b100bd64a0"
+                "reference": "e7de8b8aa7658c827c48c99212927695848540b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/4290c3d00aa53e8eef5016568f1569b100bd64a0",
-                "reference": "4290c3d00aa53e8eef5016568f1569b100bd64a0",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/e7de8b8aa7658c827c48c99212927695848540b8",
+                "reference": "e7de8b8aa7658c827c48c99212927695848540b8",
                 "shasum": ""
             },
             "require": {
@@ -770,7 +864,7 @@
                 "symfony/var-dumper": "Required to use the dd function (^7.0).",
                 "vlucas/phpdotenv": "Required to use the Env class and env helper (^5.4.1)."
             },
-            "time": "2024-04-08T16:41:34+00:00",
+            "time": "2024-04-15T12:21:59+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1228,12 +1322,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34"
+                "reference": "3cf95983a25d6439cac5f5164f0bfeeb1eb5d264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34",
-                "reference": "e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3cf95983a25d6439cac5f5164f0bfeeb1eb5d264",
+                "reference": "3cf95983a25d6439cac5f5164f0bfeeb1eb5d264",
                 "shasum": ""
             },
             "require": {
@@ -1245,7 +1339,7 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "time": "2024-03-14T13:49:05+00:00",
+            "time": "2024-04-12T09:26:28+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
@@ -1477,12 +1571,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "48f45962dc02cffb0eaa80bcad1a0b349453a505"
+                "reference": "ac4bf86689454815b2cc6c997835d13dbb0cbebe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/48f45962dc02cffb0eaa80bcad1a0b349453a505",
-                "reference": "48f45962dc02cffb0eaa80bcad1a0b349453a505",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/ac4bf86689454815b2cc6c997835d13dbb0cbebe",
+                "reference": "ac4bf86689454815b2cc6c997835d13dbb0cbebe",
                 "shasum": ""
             },
             "require": {
@@ -1518,9 +1612,9 @@
                 "symfony/service-contracts": "^2.5|^3",
                 "symfony/yaml": "^6.4|^7.0"
             },
-            "time": "2024-04-03T15:08:37+00:00",
+            "time": "2024-04-13T06:11:48+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "Resources/functions.php"

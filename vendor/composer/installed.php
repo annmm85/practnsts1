@@ -3,20 +3,42 @@
         'name' => 'annmm85/pop-it-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '68ee5a36e88ba55ab9023d1ae5cffd9fa005ca09',
+        'reference' => 'f6dbc213c19f73a0f4a8851d59ff9f28fcfdafc6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'annmm85/collect' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'a9fc4c841cdc51d92cb7a62bcaf461c943d1a1aa',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../annmm85/collect',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'annmm85/pop-it-mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '68ee5a36e88ba55ab9023d1ae5cffd9fa005ca09',
+            'reference' => 'f6dbc213c19f73a0f4a8851d59ff9f28fcfdafc6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'annmm85/uplod' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '196e91173fb9ed8816387f14ac87644bedac86b7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../annmm85/uplod',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'brick/math' => array(
@@ -60,7 +82,7 @@
         'illuminate/collections' => array(
             'pretty_version' => '11.x-dev',
             'version' => '11.9999999.9999999.9999999-dev',
-            'reference' => 'aee944e8220588756e21aa4c30eebd5f6481e453',
+            'reference' => '19c6554c7eba0efabc3f8aa4c434815b7f6b4b7d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/collections',
             'aliases' => array(),
@@ -132,7 +154,7 @@
         'illuminate/support' => array(
             'pretty_version' => '11.x-dev',
             'version' => '11.9999999.9999999.9999999-dev',
-            'reference' => '4290c3d00aa53e8eef5016568f1569b100bd64a0',
+            'reference' => 'e7de8b8aa7658c827c48c99212927695848540b8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/support',
             'aliases' => array(),
@@ -221,7 +243,7 @@
         'symfony/polyfill-mbstring' => array(
             'pretty_version' => '1.x-dev',
             'version' => '1.9999999.9999999.9999999-dev',
-            'reference' => 'e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34',
+            'reference' => '3cf95983a25d6439cac5f5164f0bfeeb1eb5d264',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
@@ -248,7 +270,7 @@
         'symfony/translation' => array(
             'pretty_version' => '7.1.x-dev',
             'version' => '7.1.9999999.9999999-dev',
-            'reference' => '48f45962dc02cffb0eaa80bcad1a0b349453a505',
+            'reference' => 'ac4bf86689454815b2cc6c997835d13dbb0cbebe',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/translation',
             'aliases' => array(),

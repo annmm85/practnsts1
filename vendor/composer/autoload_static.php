@@ -14,6 +14,8 @@ class ComposerStaticInit79d5b43292f0b385eaef813f95de9b07
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        'd56df8ae580a52e67e59a9137277f115' => __DIR__ . '/..' . '/annmm85/collect/src/helpers.php',
+        '58b32df8e199b97bf259703070f5484a' => __DIR__ . '/..' . '/annmm85/uplod/src/helpers.php',
         'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
     );
@@ -22,6 +24,10 @@ class ComposerStaticInit79d5b43292f0b385eaef813f95de9b07
         'v' => 
         array (
             'voku\\' => 5,
+        ),
+        'U' => 
+        array (
+            'Uplod\\' => 6,
         ),
         'S' => 
         array (
@@ -59,6 +65,7 @@ class ComposerStaticInit79d5b43292f0b385eaef813f95de9b07
         ),
         'C' => 
         array (
+            'Collect\\' => 8,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
@@ -72,6 +79,10 @@ class ComposerStaticInit79d5b43292f0b385eaef813f95de9b07
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'Uplod\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/annmm85/uplod/src',
         ),
         'Symfony\\Polyfill\\Php83\\' => 
         array (
@@ -151,6 +162,10 @@ class ComposerStaticInit79d5b43292f0b385eaef813f95de9b07
         'Doctrine\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
+        ),
+        'Collect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/annmm85/collect/src',
         ),
         'Carbon\\Doctrine\\' => 
         array (

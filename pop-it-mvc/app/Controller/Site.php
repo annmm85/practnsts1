@@ -21,6 +21,8 @@ use Model\Discipline_groops;
 use Model\Bests;
 use Model\Semesters;
 
+use function Uplod\uplodition;
+
 class Site
 {
     public function students(Request $request): string
@@ -216,14 +218,17 @@ class Site
     {
         if ($request->method === 'POST') {
             if ($_FILES) {
-                move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $_FILES['image']['name']);
+                uplodition('uploads/')->move_upl_file('uploads/');
+//              move_uploaded_file($_FILES['image']['tmp_name'], $direct_name . $uniqfile);
             }
+
             if (Bests::create( ['name'=>$request->name, 'image' => 'uploads/' . $_FILES['image']['name']])) {
                 app()->route->redirect('/mainik');
             }
         }
         return new View('site.create_bests');
     }
+
 public function disciplines(Request $request): string
 {   $req = null;
     $reqqa= null;
