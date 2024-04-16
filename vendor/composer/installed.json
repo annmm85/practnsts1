@@ -1151,12 +1151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/clock.git",
-                "reference": "530e082716395152f79b5770499187dc72eddc3b"
+                "reference": "04551717b2ec6bcdcc3b5d35a4b9c9ebff168a45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/clock/zipball/530e082716395152f79b5770499187dc72eddc3b",
-                "reference": "530e082716395152f79b5770499187dc72eddc3b",
+                "url": "https://api.github.com/repos/symfony/clock/zipball/04551717b2ec6bcdcc3b5d35a4b9c9ebff168a45",
+                "reference": "04551717b2ec6bcdcc3b5d35a4b9c9ebff168a45",
                 "shasum": ""
             },
             "require": {
@@ -1167,7 +1167,7 @@
             "provide": {
                 "psr/clock-implementation": "1.0"
             },
-            "time": "2024-04-09T08:32:41+00:00",
+            "time": "2024-04-13T06:11:48+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {

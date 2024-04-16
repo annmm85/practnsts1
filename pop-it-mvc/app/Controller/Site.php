@@ -150,7 +150,6 @@ class Site
 
     public function groops(Request $request): string
     {
-
         if ($request->get('id')) {
             $idgr = $request->get('id');
             $students = Students::where('groop_id', $request->id)->get();

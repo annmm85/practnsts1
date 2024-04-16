@@ -3,7 +3,7 @@
         'name' => 'annmm85/pop-it-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '9d473346ad32580e75aac01331406a4eece391e5',
+        'reference' => '68ee5a36e88ba55ab9023d1ae5cffd9fa005ca09',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'annmm85/pop-it-mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '9d473346ad32580e75aac01331406a4eece391e5',
+            'reference' => '68ee5a36e88ba55ab9023d1ae5cffd9fa005ca09',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -212,7 +212,7 @@
         'symfony/clock' => array(
             'pretty_version' => '7.1.x-dev',
             'version' => '7.1.9999999.9999999-dev',
-            'reference' => '530e082716395152f79b5770499187dc72eddc3b',
+            'reference' => '04551717b2ec6bcdcc3b5d35a4b9c9ebff168a45',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/clock',
             'aliases' => array(),
