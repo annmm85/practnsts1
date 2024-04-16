@@ -1,6 +1,6 @@
 <?php
 
-namespace Validator;
+namespace Validators;
 use Src\Validator\AbstractValidator;
 
 class NumberValidator extends AbstractValidator

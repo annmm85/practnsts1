@@ -12,12 +12,12 @@ return [
         'noAuth' => \Middlewares\NoAuthMiddleware::class,
     ],
     'validators' => [
-        'required' => \Validatecollect\Validators\RequireValidator::class,
-        'unique' => \Validatecollect\Validators\UniqueValidator::class,
-        'uniq' => \Validatecollect\Validators\UniqValidator::class,
-        'number' => \Validatecollect\Validators\NumberValidator::class,
-        'language' => \Validatecollect\Validators\LanguageValidator::class,
-        'dater' => \Validatecollect\Validators\DaterValidator::class,
+        'required' => \Validators\RequireValidator::class,
+        'unique' => \Validators\UniqueValidator::class,
+        'uniq' => \Validators\UniqValidator::class,
+        'number' => \Validators\NumberValidator::class,
+        'language' => \Validators\LanguageValidator::class,
+        'dater' => \Validators\DaterValidator::class,
     ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,
