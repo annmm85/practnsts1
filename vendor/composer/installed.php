@@ -3,7 +3,7 @@
         'name' => 'annmm85/pop-it-mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'b286832294fcff6cf713dc82d7a8e85c883bdd25',
+        'reference' => '7555c3b6808de8f7671b75c65dd1cf7070341fb7',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -24,7 +24,7 @@
         'annmm85/pop-it-mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'b286832294fcff6cf713dc82d7a8e85c883bdd25',
+            'reference' => '7555c3b6808de8f7671b75c65dd1cf7070341fb7',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
