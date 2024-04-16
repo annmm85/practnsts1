@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Validators;
+namespace Validator;
 
 use Src\Validator\AbstractValidator;
 
