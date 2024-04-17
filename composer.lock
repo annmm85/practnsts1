@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfe214e77c13538edc64027729cbbef7",
+    "content-hash": "b4250c2ad4941a407aee6c5a6ca52036",
     "packages": [
         {
             "name": "annmm85/collect",
@@ -574,12 +574,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "30a146bb05d155b0376e1c44f6afc0e73ff73f46"
+                "reference": "aa4171c74d3bac4500128aedc6084377e2e4b950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/30a146bb05d155b0376e1c44f6afc0e73ff73f46",
-                "reference": "30a146bb05d155b0376e1c44f6afc0e73ff73f46",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/aa4171c74d3bac4500128aedc6084377e2e4b950",
+                "reference": "aa4171c74d3bac4500128aedc6084377e2e4b950",
                 "shasum": ""
             },
             "require": {
@@ -634,7 +634,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-04-11T14:10:27+00:00"
+            "time": "2024-04-16T14:29:11+00:00"
         },
         {
             "name": "illuminate/events",
@@ -791,12 +791,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "e7de8b8aa7658c827c48c99212927695848540b8"
+                "reference": "a3719274707a00a8d4f84a8b27d5ca992f054b29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/e7de8b8aa7658c827c48c99212927695848540b8",
-                "reference": "e7de8b8aa7658c827c48c99212927695848540b8",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/a3719274707a00a8d4f84a8b27d5ca992f054b29",
+                "reference": "a3719274707a00a8d4f84a8b27d5ca992f054b29",
                 "shasum": ""
             },
             "require": {
@@ -857,7 +857,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-04-15T12:21:59+00:00"
+            "time": "2024-04-16T18:32:45+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1753,12 +1753,13 @@
         "illuminate/database": 20,
         "illuminate/events": 20,
         "nikic/fast-route": 20,
-        "annmm85/collect": 20
+        "annmm85/collect": 20,
+        "annmm85/uplod": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4 | ^8.0",
+        "php": "^8.0|^7.4",
         "ext-json": "*"
     },
     "platform-dev": [],

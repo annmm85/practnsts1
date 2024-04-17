@@ -173,14 +173,19 @@ class Site
             $studentik = null;
             $gro = ['groops' => $groops, 'studentik' => $studentik];
         }
+
         if ($request->method === 'POST'){
             $discipline_groop_id=$request->get('discipline_groop_id');
             $student_id=$request->get('student_id');
+
             if ($request->get('mark')) {
                 $mark = $request->get('mark');
+
+
                 $existingGrade = Grades::where('discipline_groop_id', $discipline_groop_id)
                     ->where('student_id', $student_id)->first();
                 if ($existingGrade) {
+
                     $existingGrade->update([
                         'mark' => $mark,
                     ]);
@@ -191,6 +196,7 @@ class Site
                         'mark' => $mark,
                     ]);
                 }
+
             } app()->route->redirect('/grades');
         }
         return (new View())->render('site.groops', ['gro' => $gro]);
