@@ -59,7 +59,7 @@ class Auth
     }
     public static function checkRole(): bool
     {
-        $userRole = self::user()::where('id', '=', $_SESSION['id'])->first()->roles_id;
+        $userRole = self::user()::where('id', '=', $_SESSION['id'])->first()->role_id;
         if ($userRole === 4)return true;
         else return false;
     }

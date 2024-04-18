@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -y \
     nano \
     unzip \
     git \
-    curl
+    curl\
+
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql zip exif pcntl mysqli gd

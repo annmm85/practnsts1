@@ -17,13 +17,15 @@
     "nikic/fast-route": "^2.0@dev",
     "ext-json": "*",
     "annmm85/collect": "dev-main",
-    "annmm85/uplod": "dev-master"
+    "annmm85/uplod": "dev-master",
+    "phpunit/phpunit": "^11.2@dev"
   },
   "autoload": {
     "psr-4": {
       "Src\\": "pop-it-mvc/core/Src/",
       "": "pop-it-mvc/app/"
     }
+  },
+  "require-dev": {
   }
-
 }

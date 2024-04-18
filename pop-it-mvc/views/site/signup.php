@@ -6,8 +6,8 @@
     <label>Имя <input type="text" name="name"></label>
     <label>Логин <input type="text" name="login"></label>
     <label>Пароль <input type="password" name="password"></label>
-    <div><label for="roles_id">Выберите роль:</label>
-        <select class="selectl" name="roles_id" id="roles_id">
+    <div><label for="role_id">Выберите роль:</label>
+        <select class="selectl" name="role_id" id="role_id">
             <?php
             foreach ($roles as $role) {
                 echo '<option value="'. $role->id. '">' .$role->name. '</option>';

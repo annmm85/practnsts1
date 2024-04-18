@@ -4,9 +4,10 @@
     echo '<div  class="sotrspis">';
     foreach ($users as $user) {
         echo '<div  class="sotrelemspis">';
-        echo '<li class="sotrinfo">'. $user->name . " " . $user->login .  " " . $user->password . $user->roles_id .'</li>';
+        echo '<li class="sotrinfo">'. $user->name . " " . $user->login .'</li>';
         echo '</div>';
     }
     echo '</div>';
     ?>
 <br>
+

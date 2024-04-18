@@ -40,30 +40,6 @@ class Site
         return new View('site.create_groops');
     }
 
-    public function create_students(Request $request): string
-    {
-        $groops = Groops::all();
-        if ($request->method === 'POST') {
-
-            $validator = new Validator($request->all(), [
-                'birthdate' => ['dater']
-            ], [
-                'dater' => 'Дата в поле :field некорректна'
-            ]);
-
-
-            if ($validator->fails()) {
-                return new View('site.create_students',
-                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
-            }
-
-            if (Students::create($request->all())) {
-                app()->route->redirect('/groops?id='.$request->get('groop_id').'/');
-            }
-        }
-        return new View('site.create_students', ['groops' => $groops]);
-    }
-
 
 
     public function create_disciplines(Request $request): string
@@ -78,36 +54,8 @@ class Site
 
     public function users(Request $request): string
     {
-        $users = Students::all();
+        $users = User::all();
         return (new View())->render('site.users', ['users' => $users]);
-    }
-    public function signup(Request $request): string
-    {
-        $roles = Roles::all();
-        if ($request->method === 'POST') {
-
-            $validator = new Validator($request->all(), [
-                'name' => ['required', 'language'],
-                'login' => ['required', 'unique:users,login'],
-                'password' => ['required', 'number']
-            ], [
-                'required' => 'Поле :field пусто',
-                'unique' => 'Поле :field должно быть уникально',
-                'number' => 'Поле :field должен содержать буквы',
-                'language' => 'Поле :field должен содержать только кириллицу'
-            ]);
-
-
-            if ($validator->fails()) {
-                return new View('site.signup',
-                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
-            }
-
-            if (User::create($request->all())) {
-                app()->route->redirect('/users');
-            }
-        }
-        return new View('site.signup', ['roles' => $roles]);
     }
     public function discipline_groops(Request $request): string
     {
@@ -128,6 +76,69 @@ class Site
             }
         }
         return new View('site.discipline_groops', ['groops' => $groops, 'disciplgroop' => $disciplgroop, 'disciplines' => $disciplines]);
+    }
+
+
+    public function create_students(Request $request): string
+    {
+        $groops = Groops::all();
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'surname' => ['required','language'],
+                'name' => ['required','language'],
+                'patronymic' => ['language'],
+                'birthdate' => ['required','dater'],
+                'adress'=> ['required','language'],
+                'groop_id'=> ['required']
+            ], [
+                'required' => 'Поле :field пусто',
+                'dater' => 'Поле :field должно быть позже текущей даты',
+                'language' => 'Поле :field должно содержать только кириллицу',
+            ]);
+
+
+            if ($validator->fails()) {
+                return new View('site.create_students',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+            if (Students::create($request->all())) {
+                app()->route->redirect('/groops?id='.$request->get('groop_id').'/');
+                echo '<script>alert("Студент создан")</script>';
+                return false;
+            }
+        }
+        return new View('site.create_students', ['groops' => $groops]);
+    }
+
+    public function signup(Request $request): string
+    {
+        $roles = Roles::all();
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'name' => ['required','language'],
+                'login' => ['required', 'unique:users,login'],
+                'password' => ['required', 'number']
+            ], [
+                'required' => 'Поле :field пусто',
+                'unique' => 'Поле :field должно быть уникально',
+                'language' => 'Поле :field должно содержать только кириллицу',
+                'number' => 'Поле :field должно содержать буквы',
+            ]);
+
+            if ($validator->fails()) {
+                return new View('site.signup',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if (User::create($request->all())) {
+                app()->route->redirect('/users');
+                echo '<script>alert("Пользователь создан")</script>';
+                return false;
+            }
+        }
+        return new View('site.signup', ['roles' => $roles]);
     }
 
     public function login(Request $request): string
@@ -271,5 +282,7 @@ public function disciplines(Request $request): string
     }
     return (new View())->render('site.disciplines', ['ll' => $ll, 'courses' => $courses, 'semesters' => $semesters, 'poisk' => $poisk,'req' => $req,'reqqa' => $reqqa,'reqqas' => $reqqas]);
 }
+
+
 }
 
