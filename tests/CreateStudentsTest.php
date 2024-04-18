@@ -11,6 +11,7 @@ class CreateStudentsTest extends TestCase
     {
 
         // Создаем заглушку для класса Request.
+        // Создаем заглушку для класса Request.
         $request = $this->createMock(\Src\Request::class);
         // Переопределяем метод all() и свойство method
         $request->expects($this->any())
@@ -51,7 +52,7 @@ class CreateStudentsTest extends TestCase
                 '<h3>{"surname":["Поле surname должно содержать только кириллицу"],"name":["Поле name должно содержать только кириллицу"],"patronymic":["Поле patronymic должно содержать только кириллицу"],"adress":["Поле adress должно содержать только кириллицу"]}</h3>',
             ],
             ['POST', ['surname' => 'Иванов', 'name' => 'Арсений', 'patronymic' => 'Михайлович', 'birthdate' => '2002-07-22', 'adress' => 'Томск', 'groop_id' => '1'],
-                '<script>alert("Студент создан")</script>',
+                '<h3></h3>'
             ],
         ];
     }

@@ -104,7 +104,6 @@ class Site
             }
             if (Students::create($request->all())) {
                 app()->route->redirect('/groops?id='.$request->get('groop_id').'/');
-                echo '<script>alert("Студент создан")</script>';
                 return false;
             }
         }
@@ -134,7 +133,6 @@ class Site
 
             if (User::create($request->all())) {
                 app()->route->redirect('/users');
-                echo '<script>alert("Пользователь создан")</script>';
                 return false;
             }
         }

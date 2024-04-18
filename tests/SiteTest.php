@@ -62,7 +62,7 @@ class SiteTest extends TestCase
                 '<h3>{"password":["Поле password должно содержать буквы"]}</h3>',
             ],
             ['POST', ['name' => 'админ', 'login' => md5(time()), 'password' => 'admin123', 'role_id' => '1'],
-                '<script>alert("Пользователь создан")</script>',
+                '<h3></h3>'
             ],
         ];
     }
