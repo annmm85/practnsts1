@@ -9,19 +9,28 @@ return [
         'auth' => \Middlewares\AuthMiddleware::class,
         'sotrudnik' => \Middlewares\SotrudnikMiddleware::class,
         'admin' => \Middlewares\AdminMiddleware::class,
-        'noAuth' => \Middlewares\NoAuthMiddleware::class,
     ],
     'validators' => [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
-        'uniq' => \Validators\UniqValidator::class,
         'number' => \Validators\NumberValidator::class,
         'language' => \Validators\LanguageValidator::class,
         'dater' => \Validators\DaterValidator::class,
     ],
+    //Классы для middleware
     'routeAppMiddleware' => [
+        'authApi' => \Middlewares\AuthApiMiddleware::class,
         'csrf' => \Middlewares\CSRFMiddleware::class,
+        'specialChars' => \Middlewares\SpecialCharsMiddleware::class,
         'trim' => \Middlewares\TrimMiddleware::class,
-        //'specialChars' => \Middlewares\SpecialCharsMiddleware::class,
+        'json' => \Middlewares\JSONMiddleware::class,
+
+    ],
+    //Классы провайдеров
+    'providers' => [
+        'kernel' => \Providers\KernelProvider::class,
+        'route' => \Providers\RouteProvider::class,
+        'db' => \Providers\DBProvider::class,
+        'auth' => \Providers\AuthProvider::class,
     ],
 ];

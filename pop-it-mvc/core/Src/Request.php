@@ -43,4 +43,9 @@ class Request
         }
         throw new Error('Accessing a non-existent property');
     }
+
+    public function only($email)
+    {
+    }
+
 }

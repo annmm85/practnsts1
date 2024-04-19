@@ -14,7 +14,7 @@ class SiteTest extends TestCase
             $userData['login'] = User::get()->first()->login;
         }
 
-        // Создаем заглушку для класса Request.
+        // Создаем заглушку для класса Request для заглушки
         $request = $this->createMock(\Src\Request::class);
         // Переопределяем метод all() и свойство method
         $request->expects($this->any())
